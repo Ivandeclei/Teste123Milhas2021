@@ -1,0 +1,42 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Teste 123 Milhas",
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080/api",
+            "description": "Teste 123 Milhas"
+        }
+    ],
+    "paths": {
+        "/flights": {
+            "get": {
+                "tags": [
+                    "Flights"
+                ],
+                "description": " Retorna os voos agrupados e não agrupados",
+                "parameters": [
+                    {
+                        "name": "orderBy",
+                        "in": "query",
+                        "description": "Ordena os grupos pelo preço total de cada grupo.  o padrão é do Menor para o maior [ASC]",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "ASC",
+                                "DESC"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
+    }
+}
